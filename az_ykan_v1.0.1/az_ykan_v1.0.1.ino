@@ -1,4 +1,21 @@
 
+//-------------------varialesgloba loop---------------
+int RELE,onrele,silen,silen2,newwifi,aut,sy1,minu,dentro,fuera,apagate,prendete,limin,limite; // Pin digital para el rele de control de encendido
+int mo,offpresencia1,tem1,Pintem1,Pinrele1,pmtto,horometro,horometroA,alarmahrs,dia,mes,ano,hora,minutos,segundos,pday,pmonth,pyear,T,H,M,S,D,E,A ,ONhoro1,h ;   // SENSORES NECESITAN UNA VARIABLE AUXILIAR PARA COMPARAR CAMBIOS
+String  mo1,t,ssi,ubi,TEM,EST,rel,MOV,enne;
+
+//-----------CODIGO HTML PAGINA DE CONFIGURACION---------------
+String pagina = "<!DOCTYPE html>"
+"<html lang='en'>"
+"<head>"
+    "<meta charset='UTF-8'>"
+    "<meta name='viewport' content='width=device-width, initial-scale=1.0'>"
+    "<meta http-equiv='X-UA-Compatible' content='ie=edge'>"
+    "<title>φ atsurabzaid Ω Y-KAN</title>"
+    "<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>"
+    "<link rel='shortcut icon' href='data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAADe2in/3top/97aKf/e2in/3top/97aKf/e2in/3top/97aKf/e2in/3top/97aKf/e2in/3top/97aKf/e2in/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9jTA//Y0wP/2NMD/9jTBP/Y0wT/2NMD/9jTA//Y0wP/2NMD/9jTA//Y0wP/2NMD/9jTA//Y0wP/2NMD/9jTA//Y0wP/2NMD/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMD/9jTA//Y0wP/2NIA/9jSAP/Y0wH/19IA/9fSAv/Y0wP/2NMC/9jTAv/Y0wL/2NMC/9jTA//Y0wL/2NMB/9jSAP/Y0gD/2NIA/9vXLP/b1if/29kx/+jolf/o5of/2tcn/9nWGv/Z1xz/2dYZ/9rWJP/a1hr/2Ncg/9nVFP/a1iP/29ct/9vXK//Z1Av/2NQJ/9nUDv/m5Xv/391D/9bSAP/Y1Ab/19MD/9nUA//Y1AX/2NQD/9nVBP/Y0wX/2NQJ/9jUC//Y1Ar/2NMA/9jTAP/Y1AD/08gD/9TBAv/ZxgP/2MUE/9nGBP/TwQb/zbwH/829Bv/SwQX/2tAB/9jTAP/Y0wD/2NMA/9jTAv/Y0gL/2tYC/9HDBf/Wvgb/4McC/93FAv/hyAH/0LoI/7unDf/XwwT/zrcH/9fLAv/Y1AL/2NMC/9jTAv/Y0wL/2NMC/9nVAv/WyAT/0boH/+DIAf/dxQL/38cB/9W/Bv/Fsgr/2MME/825B//VygP/2dUC/9jTAv/Y0wL/2NMC/9jTAv/Y1AL/2soD/9W+Bf/WwAX/4MgB/+DIAf/bxAT/484B/+LOAP/OuQf/2MwC/9jUAv/Y0wL/2NMC/9jTAv/Y0wL/2NUC/9fIBP/dxgL/1sIF/9K7B//awQP/2L8G/9nEBP/Svgb/1L0F/9rNAf/Y1AL/2NMC/9jTAv/Y0wL/2NMC/9jUAv/YzQL/1sgE/9jLAv/TxgT/zsAG/87ABv/NwAb/08QG/9fIA//Y0AL/2NQC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NQC/9jUAv/Y1AL/2dUC/9rWAf/Z1QH/2tYC/9nVAv/Y1AL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0gL/2NIC/9jSAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==' type='image/x-icon'>"
+    "<link rel='icon' href='data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAADe2in/3top/97aKf/e2in/3top/97aKf/e2in/3top/97aKf/e2in/3top/97aKf/e2in/3top/97aKf/e2in/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9fSAP/X0gD/19IA/9jTA//Y0wP/2NMD/9jTBP/Y0wT/2NMD/9jTA//Y0wP/2NMD/9jTA//Y0wP/2NMD/9jTA//Y0wP/2NMD/9jTA//Y0wP/2NMD/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMD/9jTA//Y0wP/2NIA/9jSAP/Y0wH/19IA/9fSAv/Y0wP/2NMC/9jTAv/Y0wL/2NMC/9jTA//Y0wL/2NMB/9jSAP/Y0gD/2NIA/9vXLP/b1if/29kx/+jolf/o5of/2tcn/9nWGv/Z1xz/2dYZ/9rWJP/a1hr/2Ncg/9nVFP/a1iP/29ct/9vXK//Z1Av/2NQJ/9nUDv/m5Xv/391D/9bSAP/Y1Ab/19MD/9nUA//Y1AX/2NQD/9nVBP/Y0wX/2NQJ/9jUC//Y1Ar/2NMA/9jTAP/Y1AD/08gD/9TBAv/ZxgP/2MUE/9nGBP/TwQb/zbwH/829Bv/SwQX/2tAB/9jTAP/Y0wD/2NMA/9jTAv/Y0gL/2tYC/9HDBf/Wvgb/4McC/93FAv/hyAH/0LoI/7unDf/XwwT/zrcH/9fLAv/Y1AL/2NMC/9jTAv/Y0wL/2NMC/9nVAv/WyAT/0boH/+DIAf/dxQL/38cB/9W/Bv/Fsgr/2MME/825B//VygP/2dUC/9jTAv/Y0wL/2NMC/9jTAv/Y1AL/2soD/9W+Bf/WwAX/4MgB/+DIAf/bxAT/484B/+LOAP/OuQf/2MwC/9jUAv/Y0wL/2NMC/9jTAv/Y0wL/2NUC/9fIBP/dxgL/1sIF/9K7B//awQP/2L8G/9nEBP/Svgb/1L0F/9rNAf/Y1AL/2NMC/9jTAv/Y0wL/2NMC/9jUAv/YzQL/1sgE/9jLAv/TxgT/zsAG/87ABv/NwAb/08QG/9fIA//Y0AL/2NQC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NQC/9jUAv/Y1AL/2dUC/9rWAf/Z1QH/2tYC/9nVAv/Y1AL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0gL/2NIC/9jSAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/2NMC/9jTAv/Y0wL/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==' type='image/x-icon'>"
+    
     "<style>"
        " img{"
             "max-width: 120px;"
@@ -464,109 +481,7 @@ if(aut==1){
                                         }
                                 }
                                 //////////////////////////////////
-                            }                           
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////////RELE DE ACTIVACION LUMINARIA////////////////////////////////////
-RELE= Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/alarmas/est");// se descarga condicion para encendido de lampara
-Pinrele1 = Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/activaciones/RELE/Pin");// se descarga pin de rele de activacion
-onrele = Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/activaciones/RELE/ON");// se descarga pin de rele de activacion 1 PARA ENCENDER 0 PARA APAGAR
 
-digitalWrite(Pinrele1,onrele); // pin,estado 1 o 0//// es quien encendera la lampara
-
- if(onrele >= RELE)//ACTIVACION DE RELE EN PIN 13 osea D7 " RELE " es la condicion de encendido
- 
-{      rel = " ON ";
-
-
-
-EST = "LAMPARA ON EN LA: ";
-
-Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/estado1",rel);
-ssi=Firebase.getString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/ubicacion");
-
-delay(100);
-Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/alarmas/NOTICIAS",EST + ssi +" "+ tem1 +" °C " + "->" + " {"+ hora +":"+ minutos +":" + segundos + "} " +  dia + "/" + mes + "/" + ano);
-if (Firebase.failed()) {
-      Serial.print("setting /MO1 failed:");
-      Serial.println(Firebase.error());  
-      return;
-  }
-
-   }
-else{
-
-rel =" OFF ";
-
-EST = "LAMPARA OFF EN LA: ";
-
-Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/estado1",rel);
-ssi=Firebase.getString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/ubicacion");
-delay(100);
-silen=Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/activaciones/DATOS/ON");/////
-silen2=Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/activaciones/RELE/ON");/////
-
-if(silen==1){
-if(silen2 == 1||mo ==1 || tem1>=T){// este desactiva las actualizaciones de lampara en off
-Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/alarmas/NOTICIAS",EST + ssi +" " + tem1 +" °C "+ "->" + " {"+ hora +":"+ minutos +":" + segundos + "} " +  dia + "/" + mes + "/" + ano);
-}
-}
-  if (Firebase.failed()) {
-      Serial.print("setting /MO1 failed:");
-      Serial.println(Firebase.error());  
-      return;
-  }
-
-}
-
-
-///////////////////////////////PIN DE TEMP////////////////////////////////////////////
- T= Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/alarmas/tem");// se descarga condicion de limite de proteccion de temperatura
-Pintem1 = Firebase.getInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/activaciones/DH11/Pin");
-
-tem1 = map(analogRead(Pintem1),0,1023,0,330);
-
- if(analogRead(Pintem1)>= T)//ACTIVACION DE SENSOR DE TEMPERATURA EN PIN  A0
- 
-{        
-
-TEM = "ALTA TEMPERATURA EN LA: ";
-
-Firebase.setInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/temperatura1",tem1);
-ssi=Firebase.getString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/ubicacion");
-delay(100);
-Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/alarmas/NOTICIAS",TEM + ssi +" "+ tem1 +" °C " + "->" + " {"+ hora +":"+ minutos +":" + segundos + "} " +  dia + "/" + mes + "/" + ano);
-Firebase.pushString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/alarmas/EVENTOS",TEM + ssi +" " + tem1 +" °C "+ "->" + " {"+ hora +":"+ minutos +":" + segundos + "} " +  dia + "/" + mes + "/" + ano);
-if (Firebase.failed()) {
-      Serial.print("setting /MO1 failed:");
-      Serial.println(Firebase.error());  
-      return;
-  }
-
-   }
-else{
-  
-Firebase.setInt("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/temperatura1",tem1);
-ssi=Firebase.getString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/ubicacion");
-delay(100);
- 
-  if (Firebase.failed()) {
-      Serial.print("setting /MO1 failed:");
-      Serial.println(Firebase.error());  
-      return;
-  }
-  
-}
-////////////////////////////////////////////////////
-
-if(digitalRead(16)==1){
-  enne="ENERGIZADO";
-  Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/energia",enne);
-}else{
-  enne="SIN ENERGIA";
-  Firebase.setString("/CASAS/FrVts3PewEdhJUAwDR2ot5Rny2N2/YKAN/Ykan1/parametros/energia",enne);
-}
-/////////////////////////////////////////////
- 
   
   
  
