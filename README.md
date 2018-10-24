@@ -1,6 +1,6 @@
-## ind-matageyco de atsurabzaid
+# ind-matageyco de atsurabzaid
 
-# instrumentalizacion de prueba industrial
-# realizacion de prueba
+## instrumentalizacion de prueba industrial
+## realizacion de prueba
 
 
