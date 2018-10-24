@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "include.paths": [
+                "C:\\Program Files (x86)\\Arduino\\tools\\**",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "${workspaceFolder}/Arduino-master/tools/sdk/libc/xtensa-lx106-elf/include"
+            ],
+            "compile_commands.json": "<path to your compile commands.json file>",
+            "forcedInclude": [
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "include.Path": [
+                "C:\\Program Files (x86)\\Arduino\\tools\\**",
+                "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
+                "${default}",
+                "${workspaceFolder}/Arduino-master/tools/sdk/libc/xtensa-lx106-elf/include/machine",
+                "C:\\ProgramData\\Users\\Angel_Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\firebase-arduino-master\\src",
+                "C:\\ProgramData\\Users\\Angel_Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\Arduino-master\\libraries\\ESP8266WiFi\\scr",
+                "C:\\ProgramData\\Users\\Angel_Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\Arduino-master\\libraries\\EEPROM"
+            ]
+        }
+    ],
+    "version": 4
+}
