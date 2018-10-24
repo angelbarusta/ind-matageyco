@@ -17,9 +17,15 @@
                 "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\**",
                 "${default}",
                 "${workspaceFolder}/Arduino-master/tools/sdk/libc/xtensa-lx106-elf/include/machine",
+<<<<<<< HEAD
                 "C:\\ProgramData\\Users\\Angel_Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\firebase-arduino-master\\src",
                 "C:\\ProgramData\\Users\\Angel_Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\Arduino-master\\libraries\\ESP8266WiFi\\scr",
                 "C:\\ProgramData\\Users\\Angel_Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\Arduino-master\\libraries\\EEPROM"
+=======
+                "C:\\ProgramData\\Users\\Angel Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\firebase-arduino-master\\src",
+                "C:\\ProgramData\\Users\\Angel Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\Arduino-master\\libraries\\ESP8266WiFi\\scr",
+                "C:\\ProgramData\\Users\\Angel Barusta\\Desktop\\AZ\\ind-matageyco\\az_ykan_v1.0.1\\Arduino-master\\libraries\\EEPROM"
+>>>>>>> release/V0.0.1
             ]
         }
     ],
